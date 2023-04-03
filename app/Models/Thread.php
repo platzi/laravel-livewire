@@ -5,12 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Thread extends Model
 {
     use HasFactory;
-
-    public function threads()
-    {
-        return $this->hasMany(Thread::class);
-    }
 }
