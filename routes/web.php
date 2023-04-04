@@ -7,6 +7,10 @@ Route::get('/', \App\Http\Livewire\ShowThreads::class)
     ->middleware('auth')
     ->name('dashboard');
 
+Route::get('/thread/{thread}', \App\Http\Livewire\ShowThread::class)
+    ->middleware('auth')
+    ->name('thread');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
