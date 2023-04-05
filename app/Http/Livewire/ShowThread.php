@@ -32,6 +32,7 @@ class ShowThread extends Component
             'replies' => $this->thread
                 ->replies()
                 ->whereNull('reply_id')
+                ->with('user', 'replies.user', 'replies.replies')
                 ->get()
         ]);
     }
